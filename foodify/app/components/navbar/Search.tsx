@@ -18,7 +18,7 @@ const Search = () => {
                     <div className="hidden sm:block">
                         
                     </div>
-                    <div className="p-2 bg-rose-500 rounded-full text-white">
+                    <div className="p-2 bg-green rounded-full text-white">
                         <FiSearch size={18} />
                     </div>
                 </div>
