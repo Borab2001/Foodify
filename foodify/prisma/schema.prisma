@@ -1,0 +1,88 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String?
+  email String? @unique
+  emailVerified DateTime?
+  image String?
+  hashedPassword String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  favoriteRecipeIds String[] @db.ObjectId
+
+  accounts Account[]
+  shoppingList ShoppingListItem[]
+  fridgeItems FridgeItem[]
+}
+
+model Account {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  userId String @db.ObjectId
+  type String
+  provider String
+  providerAccountId String
+  refresh_token String? @db.String
+  access_token String? @db.String
+  expires_at Int?
+  token_type String?
+  scope String?
+  id_token String? @db.String
+  session_state String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model ShoppingListItem {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  quantity Int
+  purchased Boolean @default(false)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @db.ObjectId
+}
+
+model FridgeItem {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  quantity Int
+  expirationDate DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String @db.ObjectId
+}
+
+model Recipe {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  description String?
+  imageUrl String?
+  instructions String[]
+  ingredients RecipeIngredient[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model RecipeIngredient {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  quantity Int
+  unit String?
+
+  recipe Recipe @relation(fields: [recipeId], references: [id])
+  recipeId String @db.ObjectId
+}
