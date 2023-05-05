@@ -86,3 +86,6 @@ model RecipeIngredient {
   recipe Recipe @relation(fields: [recipeId], references: [id])
   recipeId String @db.ObjectId
 }
+
+
+//npx prisma db push
