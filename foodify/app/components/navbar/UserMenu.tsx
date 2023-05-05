@@ -1,11 +1,18 @@
 'use client';
 
+import { User } from "next-auth";
+import { signOut } from "next-auth/react";
 import { useCallback, useState } from "react";
 import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";
 
+interface UserMenuProps {
+    currentUser?: User | null
+}
 
-const UserMenu = () => {
+const UserMenu: React.FC<UserMenuProps> = ({
+    currentUser
+}) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
@@ -25,10 +32,18 @@ const UserMenu = () => {
             {isOpen && (
                 <div className="absolute rounded-xl shadow-md w-[40vw] md:w-[200px] px-8 bg-white overflow-hidden right-0 top-12 text-sm">
                     <div className="flex flex-col cursor-pointer">
-                        <>
-                        <MenuItem onClick={() => { } } label="Settings" textWhite={false} background={false}/>
-                        <MenuItem onClick={() => { } } label="Sign Out" textWhite={false} background={false}/>
-                        </>
+                        {currentUser ? (
+                            <>
+                                <MenuItem onClick={() => { } } label="Settings" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                <hr />
+                                <MenuItem onClick={() => signOut()} label="Sign Out" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                            </>
+                        ) : (
+                            <>
+                                <MenuItem onClick={() => { } } label="Settings" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                <MenuItem onClick={() => { } } label="Sign Out" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                            </>
+                        )}
                     </div>
                 </div>
             )}
