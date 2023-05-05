@@ -7,6 +7,7 @@ import MenuItem from './components/navbar/MenuItem';
 
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from './hooks/useLoginModal';
+import { signIn } from 'next-auth/react';
 
 const Auth = () => {
     const registerModal = useRegisterModal();
@@ -28,13 +29,13 @@ const Auth = () => {
                 {/* <button className="bg-green text-black text-center text-lg rounded-full py-3 px-2 w-full mt-8 font-bold">Sign Up</button> */}
                 <MenuItem onClick={registerModal.onOpen} label="Sign Up" textWhite={false} background={true} radius={true} bold={true} hoverBackground={true}/>
                 <button className='bg-transparent py-3 text-white font-bold rounded-full w-full mt-1 hover:bg-neutral-600 transition flex flex-row items-center justify-center gap-4 border-2'
-                    onClick={() => {}}
+                    onClick={() => signIn('google')}
                 >
                     <FcGoogle size={25} />
                     Continue with Google
                 </button>
                 <button className='bg-transparent py-3 text-white font-bold rounded-full w-full mt-1 hover:bg-neutral-600 transition flex flex-row items-center justify-center gap-4 border-2'
-                    onClick={() => {}}
+                    onClick={() => signIn('github')}
                 >
                     <FaGithub size={25} />
                     Continue with GitHub

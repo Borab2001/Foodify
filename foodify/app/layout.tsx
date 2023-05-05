@@ -10,7 +10,7 @@ import getCurrentUser from "./actions/getCurrentUser";
 
 export const metadata = {
   title: 'Foodify',
-  description: 'A all-in-one recipe app',
+  description: 'An all-in-one recipe app',
 }
 
 const font = Mulish({
