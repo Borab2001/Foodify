@@ -1,13 +1,13 @@
 'use client';
 
-import { User } from "next-auth";
+import { SafeUser } from "@/app/types";
 import { signOut } from "next-auth/react";
 import { useCallback, useState } from "react";
 import Avatar from "../Avatar";
 import MenuItem from "./MenuItem";
 
 interface UserMenuProps {
-    currentUser?: User | null
+    currentUser?: SafeUser | null
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({
