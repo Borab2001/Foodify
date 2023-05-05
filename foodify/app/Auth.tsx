@@ -4,7 +4,7 @@ import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 
 import { useCallback, useState } from "react";
-import MenuItem from './navbar/MenuItem';
+import MenuItem from './components/navbar/MenuItem';
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 
 const Auth = () => {
