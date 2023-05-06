@@ -7,7 +7,7 @@ const Logo = () => {
     const router = useRouter();
 
     return (
-        <Image alt="Logo" className="block cursor-pointer" height="100" width="100" src="/images/logo.svg" />
+        <Image onClick={() => router.push('/')} alt="Logo" className="block cursor-pointer" height="100" width="100" src="/images/logo.svg" />
     );
 }
 
