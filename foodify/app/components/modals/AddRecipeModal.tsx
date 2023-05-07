@@ -10,6 +10,7 @@ import CategoryInput from "../inputs/categoryInput";
 import { categories } from "../navbar/Categories";
 
 import Modal from "./Modal";
+import Counter from "../inputs/Counter";
 
 enum STEPS {
     CATEGORY = 0,
@@ -36,15 +37,20 @@ const AddRecipeModal = () => {
     } = useForm<FieldValues>({
         defaultValues: {
             category: '',
-            ingredientCount: '1',
+            ingredientCount: 1,
+            servingCount: 1,
+            minuteCount: 1,
             imageSrc: '',
-            calories: '1',
+            calories: 1,
             title: '',
             description: ''
         }
     });
 
     const category = watch('category');
+    const ingredientCount = watch('ingredientCount');
+    const servingCount = watch('servingCount');
+    const minuteCount = watch('minuteCount');
 
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
@@ -55,11 +61,11 @@ const AddRecipeModal = () => {
     }
 
     const onBack = () => {
-        setStep((value) => value -1);
+        setStep((value) => value - 1);
     }
 
     const onNext = () => {
-        setStep((value) => value +1);
+        setStep((value) => value + 1);
     }
 
     const actionLabel = useMemo(() => {
@@ -76,7 +82,7 @@ const AddRecipeModal = () => {
         }
 
         return 'Back';
-    }, []);
+    }, [step]);
 
     let bodyContent = (
         <div className="flex flex-col gap-8">
@@ -99,11 +105,42 @@ const AddRecipeModal = () => {
         </div>
     )
 
+    if (step === STEPS.INFO) {
+        bodyContent = (
+            <div className="flex flex-col gap-8">
+                <Heading
+                    title="Share some basics about your recipe"
+                    subtitle="What ingredients do you have?"
+                />
+                <Counter 
+                    title="Ingredients" 
+                    subtitle="How many ingredients for this recipe?"
+                    value={ingredientCount}
+                    onChange={(value) => setCustomValue('ingredientCount', value)}
+                />
+                <hr />
+                <Counter 
+                    title="Servings" 
+                    subtitle="For how many servings?"
+                    value={servingCount}
+                    onChange={(value) => setCustomValue('servingCount', value)}
+                />
+                <hr />
+                <Counter 
+                    title="Time" 
+                    subtitle="For how much time? (in minutes)"
+                    value={minuteCount}
+                    onChange={(value) => setCustomValue('minuteCount', value)}
+                />
+            </div>
+        )
+    }
+
     return (
         <Modal
             isOpen={addRecipeModal.isOpen} 
             onClose={addRecipeModal.onClose}
-            onSubmit={addRecipeModal.onClose}
+            onSubmit={onNext}
             actionLabel={actionLabel}
             secondaryActionLabel={secondaryActionLabel}
             secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
