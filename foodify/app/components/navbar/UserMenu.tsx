@@ -54,7 +54,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                         {currentUser ? (
                             <>
                                 {/* This button will allow you to add a recipe (not sure about the functionnality yet) */}
-                                {/* <MenuItem onClick={addRecipeModal.onOpen} label="Settings" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/> */}
+                                <MenuItem onClick={addRecipeModal.onOpen} label="Add Recipe" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 <MenuItem onClick={() => { } } label="Settings" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 <hr />
                                 <MenuItem onClick={() => signOut()} label="Sign Out" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>

@@ -50,8 +50,8 @@ const AddRecipeModal = () => {
             minuteCount: 1,
             imageSrc: '',
             title: '',
-            ingredientList: '',
             calories: '',
+            ingredientList: '',
             description: ''
         }
     });

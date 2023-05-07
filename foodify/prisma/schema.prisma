@@ -11,38 +11,55 @@ datasource db {
 }
 
 model User {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String?
-  email String? @unique
-  emailVerified DateTime?
-  image String?
-  hashedPassword String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  favoriteRecipeIds String[] @db.ObjectId
+  id              String @id @default(auto()) @map("_id") @db.ObjectId
+  name            String?
+  email           String?   @unique
+  emailVerified   DateTime?
+  image           String?
+  hashedPassword  String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  favoriteIds     String[] @db.ObjectId
 
   accounts Account[]
+  listings Listing[]
   shoppingList ShoppingListItem[]
   fridgeItems FridgeItem[]
 }
 
 model Account {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  userId String @db.ObjectId
-  type String
-  provider String
-  providerAccountId String
-  refresh_token String? @db.String
-  access_token String? @db.String
-  expires_at Int?
-  token_type String?
-  scope String?
-  id_token String? @db.String
-  session_state String?
+  id                 String @id @default(auto()) @map("_id") @db.ObjectId
+  userId             String   @db.ObjectId
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String?  @db.String
+  access_token       String?  @db.String
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?  @db.String
+  session_state      String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
-
   @@unique([provider, providerAccountId])
+}
+
+model Listing {
+  id               String @id @default(auto()) @map("_id") @db.ObjectId
+  title            String
+  ingredientList   String
+  description      String
+  imageSrc         String
+  createdAt        DateTime @default(now())
+  category         String
+  ingredientCount  Int
+  servingCount     Int
+  minuteCount      Int
+  calories         String
+  userId           String @db.ObjectId
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model ShoppingListItem {
@@ -65,27 +82,84 @@ model FridgeItem {
   userId String @db.ObjectId
 }
 
-model Recipe {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  title String
-  description String?
-  imageUrl String?
-  instructions String[]
-  ingredients RecipeIngredient[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
 
-model RecipeIngredient {
-  id String @id @default(auto()) @map("_id") @db.ObjectId
-  name String
-  quantity Int
-  unit String?
+// model User {
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   name String?
+//   email String? @unique
+//   emailVerified DateTime?
+//   image String?
+//   hashedPassword String?
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   favoriteRecipeIds String[] @db.ObjectId
 
-  recipe Recipe @relation(fields: [recipeId], references: [id])
-  recipeId String @db.ObjectId
-}
+//   accounts Account[]
+//   shoppingList ShoppingListItem[]
+//   fridgeItems FridgeItem[]
+// }
+
+// model Account {
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   userId String @db.ObjectId
+//   type String
+//   provider String
+//   providerAccountId String
+//   refresh_token String? @db.String
+//   access_token String? @db.String
+//   expires_at Int?
+//   token_type String?
+//   scope String?
+//   id_token String? @db.String
+//   session_state String?
+
+//   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+//   @@unique([provider, providerAccountId])
+// }
+
+// model ShoppingListItem {
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   name String
+//   quantity Int
+//   purchased Boolean @default(false)
+
+//   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+//   userId String @db.ObjectId
+// }
+
+// model FridgeItem {
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   name String
+//   quantity Int
+//   expirationDate DateTime?
+
+//   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+//   userId String @db.ObjectId
+// }
+
+// model Recipe {
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   title String
+//   description String?
+//   imageUrl String?
+//   instructions String[]
+//   ingredients RecipeIngredient[]
+
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+// }
+
+// model RecipeIngredient {
+//   id String @id @default(auto()) @map("_id") @db.ObjectId
+//   name String
+//   quantity Int
+//   unit String?
+
+//   recipe Recipe @relation(fields: [recipeId], references: [id])
+//   recipeId String @db.ObjectId
+// }
 
 
 //npx prisma db push
