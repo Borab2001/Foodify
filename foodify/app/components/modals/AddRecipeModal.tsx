@@ -11,6 +11,7 @@ import { categories } from "../navbar/Categories";
 
 import Modal from "./Modal";
 import Counter from "../inputs/Counter";
+import ImageUpload from "../inputs/ImageUpload";
 
 enum STEPS {
     CATEGORY = 0,
@@ -51,6 +52,7 @@ const AddRecipeModal = () => {
     const ingredientCount = watch('ingredientCount');
     const servingCount = watch('servingCount');
     const minuteCount = watch('minuteCount');
+    const imageSrc = watch('imageSrc');
 
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
@@ -131,6 +133,21 @@ const AddRecipeModal = () => {
                     subtitle="For how much time? (in minutes)"
                     value={minuteCount}
                     onChange={(value) => setCustomValue('minuteCount', value)}
+                />
+            </div>
+        )
+    }
+
+    if (step === STEPS.IMAGES) {
+        bodyContent = (
+            <div className="flex flex-col gap-8">
+                <Heading 
+                    title="Add a photo of your recipe"
+                    subtitle="Show to everyone what your recipe looks like!"
+                />
+                <ImageUpload
+                    value={imageSrc}
+                    onChange={(value) => setCustomValue('imageSrc', value)}
                 />
             </div>
         )
