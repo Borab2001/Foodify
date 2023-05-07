@@ -1,30 +1,37 @@
 'use client';
 
 import { useMemo, useState } from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import useAddRecipeModal from "@/app/hooks/useAddRecipeModal";
 
 import Heading from "../Heading";
-import CategoryInput from "../inputs/categoryInput";
+import CategoryInput from "../inputs/CategoryInput";
 import { categories } from "../navbar/Categories";
 
 import Modal from "./Modal";
 import Counter from "../inputs/Counter";
 import ImageUpload from "../inputs/ImageUpload";
+import Input from "../inputs/Input";
+import Textarea from "../inputs/Textarea";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 enum STEPS {
     CATEGORY = 0,
     INFO = 1,
     IMAGES = 2,
-    DESCRIPTION = 3,
-    CALORIES = 4
+    NAME = 3,
+    DESCRIPTION = 4
 }
 
 const AddRecipeModal = () => {
+    const router = useRouter();
     const addRecipeModal = useAddRecipeModal();
 
-    const [step, setStep] = useState(STEPS.CATEGORY)
+    const [step, setStep] = useState(STEPS.CATEGORY);
+    const [isLoading, setIsLoading] = useState(false);
 
     const {
         register,
@@ -42,8 +49,9 @@ const AddRecipeModal = () => {
             servingCount: 1,
             minuteCount: 1,
             imageSrc: '',
-            calories: 1,
             title: '',
+            ingredientList: '',
+            calories: '',
             description: ''
         }
     });
@@ -53,6 +61,7 @@ const AddRecipeModal = () => {
     const servingCount = watch('servingCount');
     const minuteCount = watch('minuteCount');
     const imageSrc = watch('imageSrc');
+    const title = watch('title');
 
     const setCustomValue = (id: string, value: any) => {
         setValue(id, value, {
@@ -70,8 +79,30 @@ const AddRecipeModal = () => {
         setStep((value) => value + 1);
     }
 
+    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+        if (step !== STEPS.DESCRIPTION) {
+            return onNext();
+        }
+
+        setIsLoading(true);
+
+        axios.post('/api/listings', data)
+        .then(() => {
+            toast.success('Recipe Added!');
+            router.refresh();
+            reset();
+            setStep(STEPS.CATEGORY);
+            addRecipeModal.onClose();
+        })
+        .catch(() => {
+            toast.error('Something went wrong...');
+        }).finally(() => {
+            setIsLoading(false);
+        })
+    }
+
     const actionLabel = useMemo(() => {
-        if (step === STEPS.CALORIES) {
+        if (step === STEPS.DESCRIPTION) {
             return 'Create';
         }
 
@@ -153,11 +184,70 @@ const AddRecipeModal = () => {
         )
     }
 
+    if (step === STEPS.NAME) {
+        bodyContent = (
+            <div className="flex flex-col gap-8">
+                <Heading 
+                    title="Name your recipe"
+                    subtitle="Show to everyone how to do it!"
+                />
+                <Input 
+                    id="title"
+                    label="Title"
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+                <hr />
+                <Input 
+                    id="calories"
+                    label="Number of Calories"
+                    type="number"
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+            </div>
+        )
+    }
+
+    if (step === STEPS.DESCRIPTION) {
+        bodyContent = (
+            <div className="flex flex-col gap-8">
+                <Heading 
+                    title="Describe your recipe"
+                    subtitle="Show to everyone how to do it!"
+                />
+                <Textarea 
+                    id="ingredientList"
+                    label="Ingredient : Quantity/Units"
+                    rows={3}
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+                <hr />
+                <Textarea 
+                    id="description"
+                    label="Description"
+                    rows={5}
+                    disabled={isLoading}
+                    register={register}
+                    errors={errors}
+                    required
+                />
+            </div>
+        )
+    }
+
     return (
         <Modal
             isOpen={addRecipeModal.isOpen} 
             onClose={addRecipeModal.onClose}
-            onSubmit={onNext}
+            onSubmit={handleSubmit(onSubmit)}
             actionLabel={actionLabel}
             secondaryActionLabel={secondaryActionLabel}
             secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
