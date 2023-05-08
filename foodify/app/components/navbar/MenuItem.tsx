@@ -20,7 +20,7 @@ const MenuItem: React.FC<MenuItemProps> = ({
     hoverBackground
 }) => {
     return (
-        <div onClick={onClick} className={`py-3 w-full mt-1 transition flex flex-row items-center justify-center gap-4 border-2 border-transparent cursor-pointer
+        <div onClick={onClick} className={`py-3 w-full transition flex flex-row items-center justify-center gap-4 border-2 border-transparent cursor-pointer
             ${textWhite ? 'text-white' : 'text-black'}
             ${background ? 'bg-green' : 'bg-transparent'}
             ${radius ? 'rounded-full' : 'rounded-md'}

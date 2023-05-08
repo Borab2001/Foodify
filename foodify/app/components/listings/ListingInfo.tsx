@@ -7,6 +7,7 @@ import { TbEggs } from "react-icons/tb";
 import { GiKnifeFork } from "react-icons/gi";
 import { BiTimeFive } from "react-icons/bi";
 import { AiOutlineFire } from "react-icons/ai";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
@@ -47,7 +48,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                     <Avatar  src={user?.image}/>
                 </div>
 
-                <div className="flex flex-row items-center gap-4 font-light text-neutral-500">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 font-light text-neutral-500">
                     <div className="flex flex-row items-center gap-1">
                         <TbEggs />
                         {ingredientCount} ingredients
@@ -65,7 +66,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                         {calories} kcal
                     </div>
                 </div>
-                
+
             </div>
             <hr />
             {category && (
@@ -78,13 +79,19 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
             <hr />
             <div className="flex flex-col gap-10">
                 <div className="text-lg font-semibold">
-                    Ingredients
+                    <div className="flex flex-row gap-2 items-center mb-1">
+                        <TbEggs size={30} className="text-green shrink-0" />
+                        Ingredients
+                    </div>
                     <div className="text-neutral-500 font-light text-base">
                         {ingredientList}
                     </div>
                 </div>
                 <div className="text-lg font-semibold">
-                    Tutorial
+                    <div className="flex flex-row gap-2 items-center mb-1">
+                        <HiOutlineClipboardDocumentList size={30} className="text-green shrink-0" />
+                        Tutorial
+                    </div>
                     <div className="text-neutral-500 font-light text-base">
                         {description}
                     </div>
