@@ -8,6 +8,7 @@ import LoginModal from "./components/modals/LoginModal";
 import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
 import AddRecipeModal from "./components/modals/AddRecipeModal";
+import Navigation from "./components/navbar/Navigation";
 
 export const metadata = {
   title: 'Foodify',
@@ -34,6 +35,9 @@ export default async function RootLayout({
           <LoginModal />
           <RegisterModal />
           <Navbar currentUser={currentUser} />
+          <div className="block sm:hidden">
+            <Navigation currentUser={currentUser} />
+          </div>
         </ClientOnly>
         <div className="pb-20 pt-28">
           {children}

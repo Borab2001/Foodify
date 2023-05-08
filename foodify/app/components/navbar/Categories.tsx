@@ -57,13 +57,19 @@ const Categories = () => {
 
     return (
         <Container>
-            <div className="pt-4 flex flex-row items-center justify-start gap-4 sm:gap-8 overflow-x-auto">
-                {categories.map((item) => (
-                    <CategoryBox key={item.label} label={item.label} selected={category === item.label} icon={item.icon} />
-                ))}
+            <div className="relative 
+                before:content-[''] before:h-full before:w-10 before:absolute before:left-0 before:top-0 before:bg-gradient-to-r from-white to-white/[0]
+                after:content-[''] after:h-full after:w-10 after:absolute after:right-0 after:top-0 after:bg-gradient-to-l from-white to-white/[0]"                
+            >
+                <div className="pt-4 px-4 flex flex-row items-center justify-start gap-4 sm:gap-8 overflow-x-auto scrollbar-hide">
+                    {categories.map((item) => (
+                        <CategoryBox key={item.label} label={item.label} selected={category === item.label} icon={item.icon} />
+                    ))}
+                </div>
             </div>
         </Container>
     );
 }
 
 export default Categories;
+// background: linear-gradient(to left,var(--yt-spec-base-background) 20%,rgba(33,33,33,0) 80%);
