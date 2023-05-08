@@ -6,6 +6,7 @@ import { SafeListing, SafeUser } from "@/app/types";
 import { categories } from "@/app/components/navbar/Categories";
 import Container from "@/app/components/Container";
 import ListingHead from "@/app/components/listings/ListingHead";
+import ListingInfo from "@/app/components/listings/ListingInfo";
 
 interface ListingClientProps {
     listing: SafeListing & {
@@ -19,8 +20,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
     currentUser
 }) => {
     const category = useMemo(() => {
-        return categories.find((item) => 
-        item.label === listing.category);
+        return categories.find((items) => 
+        items.label === listing.category);
     }, [listing.category]);
 
     return (
@@ -42,7 +43,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
                             servingCount={listing.servingCount}
                             minuteCount={listing.minuteCount}
                             calories={listing.calories}
-                        />
+                            category={category} 
+                            ingredientList={listing.ingredientList}                        />
                     </div>
                 </div>
             </div>

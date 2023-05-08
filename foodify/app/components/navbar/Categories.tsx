@@ -16,32 +16,32 @@ export const categories = [
     {
         label: 'Salad',
         icon: TbSalad,
-        description: 'These are only salads'
+        description: "Get your daily dose of greens with our delicious salads. Flavorful combinations that are both healthy and satisfying. Perfect as a side dish or a light meal, salads are sure to add a burst of freshness to your day."
     },
     {
         label: 'Pizza',
         icon: IoPizzaOutline,
-        description: 'These are only pizzas'
+        description: "These are only pizzas"
     },
     {
         label: 'Juice',
         icon: CiGlass,
-        description: 'These are only juices'
+        description: "These are only juices"
     },
     {
         label: 'Sandwich',
         icon: GiSandwich,
-        description: 'These are only sandwiches'
+        description: "These are only sandwiches"
     }, 
     {
         label: 'Bowl',
         icon: CgBowl,
-        description: 'These are only bowls'
+        description: "Enjoy a complete and balanced meal in a bowl! Bowl recipes offer a healthy and convenient option that's both filling and delicious. Find a variety of flavors and textures that cater to your taste buds and dietary needs. Perfect for a quick and easy meal, for lunch or dinner."
     },
     {
         label: 'Soup',
         icon: TbSoup,
-        description: 'These are only soups'
+        description: "These are only soups"
     },
 ]
 
