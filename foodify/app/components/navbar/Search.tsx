@@ -13,7 +13,7 @@ const Search = () => {
                 <div className="hidden sm:block text-sm font-semibold px-6 border-x-[1px] flex-1 text-center">
                     
                 </div> */}
-                <input type="text" className="w-full py-2 outline-none focus:outline-none focus:border-green"/>
+                {/* <input type="text" className="w-full py-2 outline-none focus:outline-none focus:border-green"/> */}
 
                 <div className="text-sm text-gray-600 flex flex-row items-center gap-3">
                     <div className="hidden sm:block">

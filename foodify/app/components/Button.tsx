@@ -24,9 +24,9 @@ const Button: React.FC<ButtonProps> = ({
             ${outline ? 'bg-white' : 'bg-green'} 
             ${outline ? 'border-black' : 'border-green'} 
             ${outline ? 'text-black' : 'text-black'} 
-            ${small ? 'py-1' : 'py-3'} 
+            ${small ? 'py-2' : 'py-3'} 
             ${small ? 'text-sm' : 'text-md'} 
-            ${small ? 'font-light' : 'font-semibold'}
+            ${small ? 'font-medium' : 'font-semibold'}
             ${small ? 'border-[1px]' : 'border-2'}`}
         >
             {Icon && (

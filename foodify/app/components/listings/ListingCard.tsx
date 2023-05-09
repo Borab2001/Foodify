@@ -77,14 +77,16 @@ const ListingCard: React.FC<ListingCardProps> = ({
                             {calories} kcal
                         </div>
                     </div>
-                    {onAction && actionLabel && (
-                        <Button
-                            disabled={disabled}
-                            small
-                            label={actionLabel}
-                            onClick={handleCancel}
-                        />
-                    )}
+                    <div className="mt-3">
+                        {onAction && actionLabel && (
+                            <Button
+                                disabled={disabled}
+                                small
+                                label={actionLabel}
+                                onClick={handleCancel}
+                            />
+                        )}
+                    </div>
                 </div>
         </div>
     );

@@ -72,7 +72,10 @@ const UserMenu: React.FC<UserMenuProps> = ({
                                     <MenuItem onClick={addRecipeModal.onOpen} label="Add Recipe" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 </div>
                                 <div className="block">
-                                    <MenuItem onClick={() => router.push('/favorites')} label="My Favorites" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                    <MenuItem onClick={() => router.push('/myrecipes')} label="My Recipes" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                </div>
+                                <div className="block">
+                                    <MenuItem onClick={() => router.push('/favorites')} label="Favorites" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 </div>
                                 <MenuItem onClick={() => { } } label="Settings" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 <hr />
