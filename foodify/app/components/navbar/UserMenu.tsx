@@ -8,10 +8,12 @@ import MenuItem from "./MenuItem";
 
 import useAddRecipeModal from "@/app/hooks/useAddRecipeModal";
 import useLoginModal from "@/app/hooks/useLoginModal";
+import useRegisterModal from "@/app/hooks/useRegisterModal";
 import { SafeUser } from "@/app/types";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlinePlusCircle }  from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
     currentUser?: SafeUser | null
@@ -20,10 +22,13 @@ interface UserMenuProps {
 const UserMenu: React.FC<UserMenuProps> = ({
     currentUser
 }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const router = useRouter();
 
     const loginModal = useLoginModal();
+    const registerModal = useRegisterModal();
     const addRecipeModal = useAddRecipeModal();
+    
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = useCallback(() => {
         setIsOpen((value) => !value);
@@ -66,14 +71,17 @@ const UserMenu: React.FC<UserMenuProps> = ({
                                 <div className="block md:hidden">
                                     <MenuItem onClick={addRecipeModal.onOpen} label="Add Recipe" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 </div>
+                                <div className="block">
+                                    <MenuItem onClick={() => router.push('/favorites')} label="My Favorites" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                </div>
                                 <MenuItem onClick={() => { } } label="Settings" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 <hr />
                                 <MenuItem onClick={() => signOut()} label="Sign Out" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                             </>
                         ) : (
                             <>
-                                <MenuItem onClick={() => { } } label="Settings" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
-                                <MenuItem onClick={() => { } } label="Sign Out" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                <MenuItem onClick={registerModal.onOpen} label="Sign Up" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                <MenuItem onClick={loginModal.onOpen} label="Sign In" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                             </>
                         )}
                     </div>
