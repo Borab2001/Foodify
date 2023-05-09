@@ -39,7 +39,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
     }, [currentUser, loginModal, addRecipeModal]);
 
     return(
-        <div className="relative">
+        <div className="relative z-10">
             <div className="flex flex-row items-center gap-3">
 
                 {/* This button will allow you to add a recipe (not sure about if I should keep it) */}
