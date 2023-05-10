@@ -47,7 +47,7 @@ const ingredientCountLabel = useMemo(() => {
 }, [ingredientCount]);
 
     return (
-        <div onClick={searchModal.onOpen} className="xl:border-[1px] w-full xl:w-auto py-2 rounded-full xl:shadow-sm hover:border-green focus-within:border-green transition cursor-pointer">
+        <div onClick={searchModal.onOpen} className="xl:border-[1px] w-auto ml-auto xl:ml-0 py-2 rounded-full xl:shadow-sm hover:border-green focus-within:border-green transition cursor-pointer">
             <div className="flex flex-row items-center justify-end pl-4 pr-2 gap-4">
                 <div className="hidden xl:block text-sm font-semibold px-6 flex-1 text-center whitespace-nowrap">
                     {categoryLabel}
