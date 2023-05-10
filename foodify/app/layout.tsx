@@ -1,13 +1,15 @@
 import { Mulish } from "next/font/google";
 
-import './globals.css'
+import './globals.css';
 import Navbar from "./components/navbar/Navbar";
 import ClientOnly from "./components/ClientOnly";
 import RegisterModal from "./components/modals/RegisterModal";
 import LoginModal from "./components/modals/LoginModal";
+import AddRecipeModal from "./components/modals/AddRecipeModal";
+import SearchModal from "./components/modals/SearchModal";
+
 import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
-import AddRecipeModal from "./components/modals/AddRecipeModal";
 import Navigation from "./components/navbar/Navigation";
 
 export const metadata = {
@@ -31,6 +33,7 @@ export default async function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToasterProvider />
+          <SearchModal />
           <AddRecipeModal />
           <LoginModal />
           <RegisterModal />
