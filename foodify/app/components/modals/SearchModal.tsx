@@ -24,7 +24,7 @@ const SearchModal = () => {
     const [step, setStep] = useState(STEPS.CATEGORY);
     
     const [category, setCategory] = useState('');
-    const [caloriesCount, setCaloriesCount] = useState(1);
+    const [calories, setcalories] = useState(1);
     const [minuteCount, setMinuteCount] = useState(1);
     const [ingredientCount, setIngredientCount] = useState(1);
 
@@ -49,7 +49,7 @@ const SearchModal = () => {
 
         const updatedQuery = {
             category,
-            caloriesCount,
+            calories,
             minuteCount,
             ingredientCount,
         };
@@ -66,7 +66,7 @@ const SearchModal = () => {
         step,
         router,
         category,
-        caloriesCount,
+        calories,
         minuteCount,
         ingredientCount,
         onNext,
@@ -126,8 +126,8 @@ const SearchModal = () => {
                 <Counter 
                     title="Calories" 
                     subtitle="Max number of calories"
-                    value={caloriesCount}
-                    onChange={(value) => setCaloriesCount(value)}
+                    value={calories}
+                    onChange={(value) => setcalories(value)}
                 />
                 <hr />
                 <Counter 
