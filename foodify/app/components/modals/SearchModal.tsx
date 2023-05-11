@@ -7,6 +7,7 @@ import { useCallback, useMemo, useState } from "react";
 import Modal from "./Modal";
 import Heading from "../Heading";
 import Counter from "../inputs/Counter";
+import SearchCounter from "../inputs/SearchCounter";
 import CategoryInput from "../inputs/CategoryInput";
 import { categories } from "../navbar/Categories";
 import useSearchModal from "@/app/hooks/useSearchModal";
@@ -24,7 +25,7 @@ const SearchModal = () => {
     const [step, setStep] = useState(STEPS.CATEGORY);
     
     const [category, setCategory] = useState('');
-    const [calories, setcalories] = useState(1);
+    const [calories, setcalories] = useState(25);
     const [minuteCount, setMinuteCount] = useState(1);
     const [ingredientCount, setIngredientCount] = useState(1);
 
@@ -125,7 +126,7 @@ const SearchModal = () => {
                     onChange={(value) => setIngredientCount(value)}
                 />
                 <hr />
-                <Counter 
+                <SearchCounter 
                     title="Calories" 
                     subtitle="Max number of calories"
                     value={calories}
