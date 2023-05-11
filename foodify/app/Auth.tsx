@@ -8,6 +8,7 @@ import MenuItem from './components/navbar/MenuItem';
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import useLoginModal from './hooks/useLoginModal';
 import { signIn } from 'next-auth/react';
+import Image from 'next/image';
 
 const Auth = () => {
     const registerModal = useRegisterModal();
@@ -22,7 +23,7 @@ const Auth = () => {
         <div className="relative h-full w-full bg-[url('/images/home_bg.webp')] bg-no-repeat bg-bottom bg-fixed bg-cover flex justify-center items-center">
             <div className="absolute z-0 h-full w-full bg-gradient-to-t from-black/80 to-black/20"></div>
             <div className="absolute z-1 flex flex-col items-center justify-center text-center max-w-sm w-full px-4 gap-4">
-                <img className="w-48 h-auto" src="/images/icon_white.svg" alt="" />
+                <Image className="w-48 h-auto" src="/images/icon_white.svg" alt="Auth background"/>
                 <h1 className="text-white font-bold text-4xl">Multiple Uses.<br/>One App.</h1>
                 <h2 className="text-white font-semibold text-xl">Look | Save | Cook</h2>
 
