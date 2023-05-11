@@ -38,7 +38,7 @@ export default async function RootLayout({
           <LoginModal />
           <RegisterModal />
           <Navbar currentUser={currentUser} />
-          <div className="block sm:hidden">
+          <div className="hidden sm:hidden">
             <Navigation currentUser={currentUser} />
           </div>
         </ClientOnly>

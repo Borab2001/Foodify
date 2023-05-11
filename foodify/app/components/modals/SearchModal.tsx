@@ -70,6 +70,8 @@ const SearchModal = () => {
         minuteCount,
         ingredientCount,
         onNext,
+        params,
+        searchModal
     ]);
 
     const actionLabel = useMemo(() => {
