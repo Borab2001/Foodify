@@ -3,7 +3,7 @@
 import Container from "../Container";
 
 import { MdSoupKitchen } from 'react-icons/md';
-import { FaHamburger } from 'react-icons/fa';
+import { FaHamburger, FaBlender } from 'react-icons/fa';
 import { 
     GiCroissant,
     GiFullPizza, 
@@ -49,9 +49,14 @@ export const categories = [
         description: "Satisfy your pizza cravings with these mouth-watering pizza recipes. From classic margherita to creative combinations like fig and prosciutto or buffalo chicken, this category has a variety of toppings and crusts to choose from. Whether you prefer thin and crispy or thick and chewy, the recipes in this category are sure to impress even the most discerning pizza lover."
     },
     {
-        label: 'Juice & Smoothie',
+        label: 'Juice',
         icon: GiCutLemon,
         description: "Recharge your body with this category's refreshing juice recipes. Packed with vitamins and nutrients, these juices are a delicious and healthy way to stay hydrated and energized. From green juice blends to fruity smoothies, the recipes in this category offer a variety of options to suit your taste and dietary needs. Perfect for a post-workout pick-me-up or as a midday snack."
+    },
+    {
+        label: 'Smoothie',
+        icon: FaBlender,
+        description: "delicious and nutritious smoothie recipes that will help you start your day off right or give you a boost of energy any time of day. Packed with fresh fruits, vegetables, and other wholesome ingredients, these recipes offer a tasty and convenient way to get your daily dose of vitamins and minerals. Whether you prefer creamy and indulgent flavors like chocolate banana or refreshing and invigorating combinations like green smoothies, this category has a variety of options to suit your taste buds and dietary needs."
     },
     {
         label: 'Sandwich',
