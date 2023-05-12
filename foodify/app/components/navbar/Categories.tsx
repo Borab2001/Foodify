@@ -49,7 +49,7 @@ export const categories = [
         description: "Satisfy your pizza cravings with these mouth-watering pizza recipes. From classic margherita to creative combinations like fig and prosciutto or buffalo chicken, this category has a variety of toppings and crusts to choose from. Whether you prefer thin and crispy or thick and chewy, the recipes in this category are sure to impress even the most discerning pizza lover."
     },
     {
-        label: 'Juice',
+        label: 'Juice & Smoothie',
         icon: GiCutLemon,
         description: "Recharge your body with this category's refreshing juice recipes. Packed with vitamins and nutrients, these juices are a delicious and healthy way to stay hydrated and energized. From green juice blends to fruity smoothies, the recipes in this category offer a variety of options to suit your taste and dietary needs. Perfect for a post-workout pick-me-up or as a midday snack."
     },
