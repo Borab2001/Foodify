@@ -11,6 +11,7 @@ import SearchModal from "./components/modals/SearchModal";
 import ToasterProvider from "./providers/ToasterProvider";
 import getCurrentUser from "./actions/getCurrentUser";
 import Navigation from "./components/navbar/Navigation";
+import Footer from "./components/Footer";
 
 export const metadata = {
   title: 'Foodify',
@@ -45,6 +46,9 @@ export default async function RootLayout({
         <div className="pb-20 pt-28">
           {children}
         </div>
+        <ClientOnly>
+          <Footer />
+        </ClientOnly>
       </body>
     </html>
   )
