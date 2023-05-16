@@ -61,7 +61,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                     <div className="hidden md:block">
                         <Avatar src={currentUser?.image} />
                     </div>
-                    <div className="block md:hidden">
+                    <div className="block md:hidden dark:text-white">
                         <RxHamburgerMenu size={30} className="shrink-0" />
                     </div>
                 </div>
@@ -89,6 +89,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                             <>
                                 <MenuItem onClick={registerModal.onOpen} label="Sign Up" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 <MenuItem onClick={loginModal.onOpen} label="Sign In" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                <MenuItem onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')} label={toggleText} textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                             </>
                         )}
                     </div>

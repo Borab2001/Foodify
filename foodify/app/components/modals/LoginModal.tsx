@@ -105,7 +105,7 @@ const LoginModal = () => {
                     <div>
                         First time here?
                     </div>
-                    <div onClick={toggle} className='text-neutral-800 font-semibold cursor-pointer hover:underline'>
+                    <div onClick={toggle} className='text-neutral-800 dark:text-white font-semibold cursor-pointer hover:underline'>
                         Create an account
                     </div>
                 </div>

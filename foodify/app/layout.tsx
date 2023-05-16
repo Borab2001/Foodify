@@ -43,7 +43,7 @@ export default async function RootLayout({
             <Navigation currentUser={currentUser} />
           </div>
         </ClientOnly>
-        <div className="pb-20 pt-28">
+        <div className="pb-20 pt-28 dark:bg-dark">
           {children}
         </div>
         <ClientOnly>

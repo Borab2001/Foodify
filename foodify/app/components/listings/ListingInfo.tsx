@@ -43,7 +43,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
             <div className="flex flex-col gap-2">
 
                 {/* Optional */}
-                <div className="text-xl font-semibold flex flex-row items-center gap-2">
+                <div className="text-xl font-semibold flex flex-row items-center gap-2 dark:text-white">
                     <div>Recipe by {user?.name}</div>
                     <Avatar  src={user?.image}/>
                 </div>
@@ -79,7 +79,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
             <hr />
             <div className="flex flex-col gap-10">
                 <div className="text-lg font-semibold">
-                    <div className="flex flex-row gap-2 items-center mb-1">
+                    <div className="flex flex-row gap-2 items-center mb-1 dark:text-white">
                         <TbEggs size={30} className="text-green shrink-0" />
                         Ingredients
                     </div>
@@ -88,7 +88,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                     </div>
                 </div>
                 <div className="text-lg font-semibold">
-                    <div className="flex flex-row gap-2 items-center mb-1">
+                    <div className="flex flex-row gap-2 items-center mb-1 dark:text-white">
                         <HiOutlineClipboardDocumentList size={30} className="text-green shrink-0" />
                         Tutorial
                     </div>

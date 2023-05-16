@@ -56,7 +56,7 @@ export const categories = [
     {
         label: 'Smoothie',
         icon: FaBlender,
-        description: "delicious and nutritious smoothie recipes that will help you start your day off right or give you a boost of energy any time of day. Packed with fresh fruits, vegetables, and other wholesome ingredients, these recipes offer a tasty and convenient way to get your daily dose of vitamins and minerals. Whether you prefer creamy and indulgent flavors like chocolate banana or refreshing and invigorating combinations like green smoothies, this category has a variety of options to suit your taste buds and dietary needs."
+        description: "Delicious and nutritious smoothie recipes that will help you start your day off right or give you a boost of energy any time of day. Packed with fresh fruits, vegetables, and other wholesome ingredients, these recipes offer a tasty and convenient way to get your daily dose of vitamins and minerals. Whether you prefer creamy and indulgent flavors like chocolate banana or refreshing and invigorating combinations like green smoothies, this category has a variety of options to suit your taste buds and dietary needs."
     },
     {
         label: 'Sandwich',

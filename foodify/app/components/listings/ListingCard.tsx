@@ -66,14 +66,14 @@ const ListingCard: React.FC<ListingCardProps> = ({
                             />
                         </div>
                     </div>
-                    <div className="font-semibold text-lg">
+                    <div className="font-semibold text-lg dark:text-white">
                         {title}
                     </div>
                     <div className="font-light text-neutral-500 mb-2">
                         {data.category}
                     </div>
                     <div className="flex flex-row items-center gap-1">
-                        <div className="font-semibold">
+                        <div className="font-semibold dark:text-white">
                             {calories} kcal
                         </div>
                     </div>

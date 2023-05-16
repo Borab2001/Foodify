@@ -3,8 +3,8 @@
 function Footer() {
   return (
     <>
-      <div className="w-full h-auto border-t-[1px] flex flex-col items-start justify-center sm:grid sm:grid-cols-2 md:flex md:items-center">
-        <div className="flex flex-col text-lg font-semibold px-4 py-4 md:text-center">
+      <div className="w-full h-auto border-t-[1px] dark:border-neutral-500 dark:bg-dark flex flex-col items-start justify-center sm:grid sm:grid-cols-2 md:flex md:items-center">
+        <div className="flex flex-col text-lg font-semibold px-4 py-4 md:text-center dark:text-white">
           Foodify
           <span className="text-sm text-neutral-500 mt-2 mb-1 font-medium">Multiple Uses. One App.</span>
           <span className="text-sm text-neutral-500 font-medium">Look | Save | Cook</span>
@@ -24,7 +24,7 @@ function Footer() {
           </a>
         </div>
       </div>
-      <div className="w-full px-2 py-6 text-center text-sm text-neutral-500">
+      <div className="w-full px-2 py-6 text-center text-sm text-neutral-500 dark:bg-dark">
         &copy; {new Date().getFullYear()} Foodify - All Rights Reserved
       </div>
     </>
