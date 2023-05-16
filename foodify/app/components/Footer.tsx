@@ -1,8 +1,3 @@
-'use client';
-
-import React from 'react';
-import Link from 'next/link';
-
 function Footer() {
   return (
     <>
@@ -13,18 +8,18 @@ function Footer() {
           <span className="text-sm text-neutral-500 font-medium">Look | Save | Cook</span>
         </div>
         <div className="w-auto px-4 py-6 flex flex-col gap-4 items-start justify-evenly text-sm font-normal text-neutral-500 md:flex-row">
-          <Link href="/terms-of-use">
+          <a href="/images/terms-of-use.pdf" className="hover:text-green transition cursor-pointer" target="_blank" rel="noopener noreferrer">
             Terms of Use
-          </Link>
-          <Link href="/privacy-policy">
+          </a>
+          <a href="/images/privacy-policy.pdf" className="hover:text-green transition cursor-pointer" target="_blank" rel="noopener noreferrer">
             Privacy Policy
-          </Link>
-          <Link href="/help-and-support">
+          </a>
+          <a href="/images/help-and-support.pdf" className="hover:text-green transition cursor-pointer" target="_blank" rel="noopener noreferrer">
             Help &amp; Support
-          </Link>
-          <Link href="/about-us">
+          </a>
+          <a href="/images/about-us.pdf" className="hover:text-green transition cursor-pointer" target="_blank" rel="noopener noreferrer">
             About Us
-          </Link>
+          </a>
         </div>
       </div>
       <div className="w-full px-2 py-6 text-center text-sm text-neutral-500">
