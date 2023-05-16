@@ -5,10 +5,13 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         green: '#4CD264',
+        dark: '#121212',
+        anthracite: '#1d1d1f',
       }
     },
   },
