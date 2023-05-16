@@ -42,7 +42,10 @@ const Input: React.FC<InputProps> = ({
                     pt-6
                     font-light
                     bg-white
+                    dark:bg-dark
+                    dark:text-white
                     border-2
+                    dark:border-neutral-500
                     rounded-md
                     outline-none
                     transition
@@ -50,7 +53,7 @@ const Input: React.FC<InputProps> = ({
                     disabled:cursor-not-allowed
                     ${formatCalories ? 'pl-9' : 'pl-4'}
                     ${errors[id] ? 'border-rose-500' : 'border-neutral-300'}
-                    ${errors[id] ? 'focus:border-rose-500' : 'focus:border-black'}
+                    ${errors[id] ? 'focus:border-rose-500' : 'focus:border-black dark:focus:border-white'}
                 `}
              />
              <label className={`
