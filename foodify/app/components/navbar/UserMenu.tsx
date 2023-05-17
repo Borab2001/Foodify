@@ -83,7 +83,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
                                 </div>
                                 <MenuItem onClick={() => setColorMode(colorMode === 'light' ? 'dark' : 'light')} label={toggleText} textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                                 <hr />
-                                <MenuItem onClick={() => signOut()} label="Sign Out" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
+                                <MenuItem onClick={() => signOut({ callbackUrl: '/' })} label="Sign Out" textWhite={false} background={false} radius={false} bold={false} hoverBackground={false}/>
                             </>
                         ) : (
                             <>
