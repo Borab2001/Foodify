@@ -7,3 +7,28 @@ body,
 :root {
     height: 100%;
 }
+
+*::selection {
+    background-color: #4CD264;
+    color: black;
+}
+
+*::-moz-selection {
+    background-color: #4CD264;
+    color: black;
+}
+
+*::-o-selection {
+    background-color: #4CD264;
+    color: black;
+}
+
+*::-ms-selection {
+    background-color: #4CD264;
+    color: black;
+}
+
+*::-webkit-selection {
+    background-color: #4CD264;
+    color: black;
+}
