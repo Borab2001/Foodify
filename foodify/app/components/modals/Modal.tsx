@@ -69,11 +69,11 @@ const Modal: React.FC<ModalProps> = ({
     return (
         <>
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none bg-neutral-800/70 dark:bg-black/70 transition-all duration-300 ease-in-out">
-                <div className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 my-6 mx-auto h-full md:h-auto lg:h-auto">
+                <div className="relative w-full md:w-4/6 lg:w-3/6 xl:w-2/5 mx-auto h-full md:h-auto lg:h-auto">
                     
                     {/* Content */}
                     <div className={`translate duration-300 h-full ${showModal ? 'translate-y-0' : 'translate-y-full'} ${showModal ? 'opacity-100' : 'opacity-0'}`}>
-                        <div className=" translate h-full md:h-auto lg:h-auto border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-dark outline-none focus:outline-none">
+                        <div className=" translate h-full md:h-auto lg:h-auto border-0 md:rounded-lg shadow-lg relative flex flex-col w-full bg-white dark:bg-dark outline-none focus:outline-none">
                             
                             <div className="flex items-center p-6 rounded-t justify-center relative">
                                 <button onClick={handleClose} className="p-1 border-0 hover:opacity-70 dark:text-white transition absolute left-9">
@@ -85,7 +85,7 @@ const Modal: React.FC<ModalProps> = ({
                             </div>
 
                              {/* Body */}
-                             <div className="relative p-6 flex-auto">
+                             <div className="relative p-6">
                                 {body}
                             </div>
 
