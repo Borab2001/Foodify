@@ -83,7 +83,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                         <TbEggs size={30} className="text-green shrink-0" />
                         Ingredients
                     </div>
-                    <div className="text-neutral-500 font-light text-base">
+                    <div className="text-neutral-500 font-light text-base whitespace-pre-line">
                         {ingredientList}
                     </div>
                 </div>
@@ -92,7 +92,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                         <HiOutlineClipboardDocumentList size={30} className="text-green shrink-0" />
                         Tutorial
                     </div>
-                    <div className="text-neutral-500 font-light text-base">
+                    <div className="text-neutral-500 font-light text-base whitespace-pre-line">
                         {description}
                     </div>
                 </div>
