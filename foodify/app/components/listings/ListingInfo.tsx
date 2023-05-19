@@ -83,9 +83,19 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                         <TbEggs size={30} className="text-green shrink-0" />
                         Ingredients
                     </div>
-                    <div className="text-neutral-500 font-light text-base whitespace-pre-line">
+                    {/* To display ingredients with bullet points */}
+                    {/* <div className="text-neutral-500 font-light text-base whitespace-pre-line">
                         {ingredientList}
-                    </div>
+                    </div> */}
+                    {/* To display ingredients with bullet points */}
+                    <ul className="text-neutral-500 font-light text-base">
+                        {ingredientList.split('\n').map((ingredient, index) => (
+                            <li key={index} className="flex items-center">
+                            <span className="bullet">&bull;</span>
+                            <span className="ml-2">{ingredient}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
                 <div className="text-lg font-semibold">
                     <div className="flex flex-row gap-2 items-center mb-1 dark:text-white">
