@@ -8,6 +8,10 @@ body,
     height: 100%;
 }
 
+body.dark {
+    background-color: #121212;
+}
+
 *::selection {
     background-color: #4CD264;
     color: black;
