@@ -63,7 +63,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                     </div>
                     <div className="flex flex-row items-center gap-1">
                         <AiOutlineFire />
-                        {calories} kcal
+                        {calories} kcal (per serving)
                     </div>
                 </div>
 
@@ -84,13 +84,13 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                         Ingredients
                     </div>
                     {/* To display ingredients with bullet points */}
-                    {/* <div className="text-neutral-500 font-light text-base whitespace-pre-line">
+                    {/* <div className="text-neutral-500 font-light text-base whitespace-pre-line leading-loose">
                         {ingredientList}
                     </div> */}
                     {/* To display ingredients with bullet points */}
                     <ul className="text-neutral-500 font-light text-base">
                         {ingredientList.split('\n').map((ingredient, index) => (
-                            <li key={index} className="flex items-center">
+                            <li key={index} className="flex items-start leading-loose">
                             <span className="bullet">&bull;</span>
                             <span className="ml-2">{ingredient}</span>
                             </li>
@@ -102,7 +102,7 @@ const ListingInfo: React.FC<ListingInfoProps> = ({
                         <HiOutlineClipboardDocumentList size={30} className="text-green shrink-0" />
                         Tutorial
                     </div>
-                    <div className="text-neutral-500 font-light text-base whitespace-pre-line">
+                    <div className="text-neutral-500 font-light text-base whitespace-pre-line leading-loose">
                         {description}
                     </div>
                 </div>

@@ -20,7 +20,7 @@ const ListingCategory: React.FC<ListingCategoryProps> = ({
                     <Icon size={30} className="text-green shrink-0" />
                     {label}
                 </div>
-                <div className="text-neutral-500 font-light">
+                <div className="text-neutral-500 font-light leading-loose">
                     {description}
                 </div>
             </div>

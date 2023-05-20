@@ -202,7 +202,7 @@ const AddRecipeModal = () => {
                 <hr />
                 <Input 
                     id="calories"
-                    label="Number of Calories"
+                    label="Number of Calories (Per Serving)"
                     type="number"
                     disabled={isLoading}
                     register={register}
