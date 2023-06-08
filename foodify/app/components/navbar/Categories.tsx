@@ -17,6 +17,7 @@ import {
     GiCutLemon,
     GiChickenOven
 } from 'react-icons/gi';
+import { IoFish } from 'react-icons/io5';
 
 
 import CategoryBox from "../CategoryBox";
@@ -97,6 +98,11 @@ export const categories = [
         label: 'Meat',
         icon: GiChickenOven,
         description: "Discover this category's flavorful and satisfying meat and chicken recipes. From succulent roasted chicken and tender beef brisket to hearty stews and comforting meatballs, this category has a variety of options to suit your taste and dietary needs. Whether you're looking for a quick and easy weeknight meal or a special occasion dish, the recipes in this category offer step-by-step instructions and cooking tips to help you achieve delicious results every time."
+    },
+    {
+        label: 'Fish',
+        icon: IoFish,
+        description: "Dive into delectable fish recipes, perfect for seafood lovers. From flaky and tender grilled salmon to crispy and flavorful fried fish tacos, these fish recipes offer a variety of options to tantalize your taste buds. Whether you prefer delicate white fish or robust and meaty options like tuna or swordfish, these recipes provide step-by-step instructions to help you achieve perfectly cooked, marinated and seasoned fishes. Enjoy the goodness of the ocean right in your own kitchen!"
     }
 ]
 
