@@ -13,6 +13,8 @@ import getCurrentUser from "./actions/getCurrentUser";
 import Navigation from "./components/navbar/Navigation";
 import Footer from "./components/Footer";
 
+import { Analytics } from '@vercel/analytics/react';
+
 export const metadata = {
   title: 'Foodify',
   description: 'An all-in-one recipe app',
@@ -49,6 +51,7 @@ export default async function RootLayout({
         <ClientOnly>
           <Footer />
         </ClientOnly>
+        <Analytics />
       </body>
     </html>
   )
