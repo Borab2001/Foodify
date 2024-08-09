@@ -15,7 +15,8 @@ import {
     GiCheeseWedge, 
     GiTomato, 
     GiCutLemon,
-    GiChickenOven
+    GiChickenOven,
+    GiNoodles
 } from 'react-icons/gi';
 import { IoFish } from 'react-icons/io5';
 
@@ -73,6 +74,11 @@ export const categories = [
         label: 'Meat',
         icon: GiChickenOven,
         description: "Discover this category's flavorful and satisfying meat and chicken recipes. From succulent roasted chicken and tender beef brisket to hearty stews and comforting meatballs, this category has a variety of options to suit your taste and dietary needs. Whether you're looking for a quick and easy weeknight meal or a special occasion dish, the recipes in this category offer step-by-step instructions and cooking tips to help you achieve delicious results every time."
+    },
+    {
+        label: 'Pasta',
+        icon: GiNoodles,
+        description: "Indulge in the comforting and versatile world of pasta with this collection of recipes. From classic Italian dishes like spaghetti carbonara and fettuccine alfredo to innovative and international twists like spicy arrabbiata, creamy pesto or crispy gnocchis, this category offers a wide range of flavors and textures to satisfy your pasta cravings. Whether you’re in the mood for a quick and easy weeknight dinner or a show-stopping dish for a special occasion, these pasta recipes are sure to delight and impress."
     },
     {
         label: 'Pizza',
